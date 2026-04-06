@@ -8,16 +8,14 @@ const authSlice = createSlice({
   name: 'loginpage',
   initialState,
   reducers: {
-    loginpageStatus: (state) => {
-      if(state.pageStatus ==true){
-        state.pageStatus = false;
-      }
-        else{
-            state.pageStatus = true;
-        }
+    loginOpen: (state) => {
+      state.pageStatus = true;
+    },
+    loginClose: (state) => {
+      state.pageStatus = false;
     }
   }
 })
 
-export const {loginpageStatus} = authSlice.actions
+export const {loginOpen, loginClose} = authSlice.actions
 export default authSlice.reducer

@@ -3,14 +3,14 @@ import React from 'react'
 import Link from 'next/link'
 import { navebarData } from '@/Data/kbPatel/navebar'
 import { useRouter } from 'next/navigation'
-import { loginpageStatus } from '@/reduxStore/loginSlice'
 import {useDispatch } from 'react-redux'
+import { loginOpen } from '@/reduxStore/loginSlice'
 export const Navebar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
   const handleAdminLogin = () => {
-    dispatch(loginpageStatus(true));
+    dispatch(loginOpen(true));
   }
   const gotoCentralSite = () => {
     router.replace('/');
